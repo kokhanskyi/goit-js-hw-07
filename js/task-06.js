@@ -1,13 +1,21 @@
-'use strict'
+'use strict';
 
-// #validation-input {
-//   border: 3px solid #bdbdbd;
-// }
+const inputText = document.querySelector('#validation-input');
+const inputNum = inputText.getAttribute('data-length');
 
-// #validation-input.valid {
-//   border-color: #4caf50;
-// }
+// inputText.addEventListener('blur', event => {
+//   if (inputText.value.length === +inputNum) {
+//     inputText.classList.add('valid');
+//   } else {
+//     inputText.classList.add('invalid');
+//   }
+// });
 
-// #validation-input.invalid {
-//   border-color: #f44336;
-// }
+inputText.addEventListener('blur', event => {
+  inputText.value.length === +inputNum
+    ? inputText.classList.add('valid')
+    : inputText.classList.add('invalid');
+});
+inputText.addEventListener('focus', event => {
+  inputText.classList.remove('invalid');
+});

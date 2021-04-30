@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const images = [
   {
@@ -17,3 +17,15 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const gallery = document.querySelector('#gallery');
+const listImages = images.map(
+  image => `
+<li>
+<img src = ${image.url} alt= ${image.alt} width = 450 height = 300>
+</li>`,
+);
+gallery.insertAdjacentHTML('beforeend', listImages);
+gallery.style.display = 'flex';
+gallery.style.listStyle = 'none';
+gallery.style.padding = '0';

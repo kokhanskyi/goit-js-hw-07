@@ -1,13 +1,12 @@
 'use strict'
 
-console.log(document);
-console.log(categories);
-const listCategories = categories.querySelectorAll('.item');
+const listCategories = document.querySelectorAll('.item');
 console.log(listCategories);
 console.log(`'В списке ${listCategories.length} категории.'`);
 
-
-const firstItemCategoriy = categories.querySelector('.item');
-console.log(firstItemCategoriy);
-console.log(firstItemCategoriy.textContent);
-
+listCategories.forEach(item => {
+    const h2 = item.children[0].textContent;
+    const ul = item.querySelector('ul').children.length;
+    console.log(`Категория: ${h2}
+    Количество элементов: ${ul}`)
+})
